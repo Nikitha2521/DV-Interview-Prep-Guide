@@ -1,3 +1,21 @@
+//factorial in sv(5!=5*4*3*2*1=120)
+module tb;
+
+  function automatic int factorial(int n);
+    int fact = 1;
+
+    for (int i = 1; i <= n; i++)
+      fact *= i;
+
+    return fact;
+  endfunction
+
+  initial begin
+    int num = 5;
+    $display("Factorial of %0d = %0d", num, factorial(num));
+  end
+
+endmodule
 //Things to keep in mind
 //Constraint won't allow the use of queue pushbacks, while, for and if, else procedural style blocks
 //But you can use foreach, if, else with {} instead of begin and end but not for
