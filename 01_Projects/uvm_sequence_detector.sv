@@ -5,6 +5,7 @@ module sequence_detector(
     input logic data_in,
     output logic out
 );
+    
     //state encoding
   typedef enum logic [2:0] {IDLE, S1, S11, S110, S1101} state_t;
 
