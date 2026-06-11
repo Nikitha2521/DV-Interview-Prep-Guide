@@ -101,9 +101,9 @@ class packet;
 endclass           
 //alternate method           
 $countones(num) == 1;
+//aternate2          
   rand int unsigned num;
   rand int unsigned n;
-//aternate2
   constraint c {
     n inside {[0:10]};
     num == (1 << n);
