@@ -98,8 +98,16 @@ class packet;
             }
         }
     }
-endclass
-
+endclass           
+//alternate method           
+$countones(num) == 1;
+  rand int unsigned num;
+  rand int unsigned n;
+//aternate2
+  constraint c {
+    n inside {[0:10]};
+    num == (1 << n);
+  }          
 ////////////////////////////////////////////////////
 //6. Constraint for array size b/w 20 & 30 and the values of array in descending order
 class packet;
