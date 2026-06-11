@@ -271,7 +271,7 @@ class packet;
         num <= 100;
         num % 2 == 0;
     }
-
+ 
     constraint c1 {
         num inside $urandom_range([1:100]);
     }
@@ -367,6 +367,15 @@ class packet;
 endclass
 
 */
+//aternate method          
+rand bit is_even;
+rand int num;
+constraint val{if(is_even)
+               num%2==0;
+			         else
+               num%2==1;
+              }				
+
 
 //15. generate even and odd values based on even and odd index values
 
@@ -506,7 +515,14 @@ endclass
     //inline constraint example this should be done inside the module
     item.randomize with {val1 > 150; val1 < 160;};
     item.randomize with {val2 inside {[10:15]};};
-
+//aternate method
+class base
+  rand int len;
+  constraint val{soft len inside{[1:15};}
+endclass
+class child extends base;
+ constraint len_c {len inside{[16:20]};}	
+endclass
 //20. constraint to check a power of 2 value
 
     constraint c1 {
